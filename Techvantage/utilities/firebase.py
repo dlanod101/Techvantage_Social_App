@@ -3,11 +3,6 @@ from firebase_admin import credentials, auth, storage
 from django.conf import settings
 from rest_framework import exceptions
 
-# Initialize Firebase App (this should only be done once in your entire project)
-cred = credentials.Certificate(info)
-firebase_admin.initialize_app(cred, {
-    'storageBucket': 'url'
-})
 
 def verify_firebase_token(id_token):
     """
