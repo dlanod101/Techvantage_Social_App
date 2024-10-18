@@ -8,3 +8,6 @@ class Job(models.Model):
     description = models.TextField()
     Location = models.CharField(max_length=255)
     date_published = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title
