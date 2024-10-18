@@ -28,8 +28,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-SUPABASE_URL='https://ygvoazhypteaewnlbfqc.supabase.co'
-SUPABASE_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inlndm9hemh5cHRlYWV3bmxiZnFjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mjg2NTg5NTgsImV4cCI6MjA0NDIzNDk1OH0.Og6d-Y3IhUq3_LMAgfoU_vA3r30PUNAjJv-LaSYzCMw'
 
 
 # Application definition
@@ -45,6 +43,7 @@ INSTALLED_APPS = [
     'django_filters',
     'users',
     'blog',
+    'projects',
 ]
 
 MIDDLEWARE = [
@@ -92,13 +91,6 @@ WSGI_APPLICATION = 'auth.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
 
 DATABASES = {
     'default': {
