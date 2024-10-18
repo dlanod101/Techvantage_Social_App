@@ -14,3 +14,10 @@ class RegisterSerializer(serializers.Serializer):
 class LoginSerializer(serializers.Serializer):
     email = serializers.EmailField()
     password = serializers.CharField(write_only=True, min_length=6)
+
+from rest_framework import serializers
+
+class LogoutSerializer(serializers.Serializer):
+    pass  # No fields needed for this serializer
+
+

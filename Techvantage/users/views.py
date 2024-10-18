@@ -2,7 +2,7 @@ from rest_framework.generics import CreateAPIView
 from rest_framework.response import Response
 from rest_framework import status
 from utilities.firebase import create_firebase_user, login_firebase_user, logout_firebase_user
-from .serializers import RegisterSerializer, LoginSerializer
+from .serializers import RegisterSerializer, LoginSerializer, LogoutSerializer
 from .models import CustomUser
 from rest_framework.permissions import IsAuthenticated
 from utilities.authentication import FirebaseAuthentication
@@ -22,7 +22,7 @@ class RegisterAPIView(CreateAPIView):
 
     def post(self, request, *args, **kwargs):
         """
-        POST method to register a new user.
+        `POST` method to register a new user.
         """
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
@@ -61,7 +61,7 @@ class LoginAPIView(CreateAPIView):
 
     def post(self, request, *args, **kwargs):
         """
-        POST method to log in a user with Firebase.
+        `POST` method to log in a user with Firebase.
         """
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
@@ -86,10 +86,11 @@ class LogoutAPIView(CreateAPIView):
     """
     permission_classes = (IsAuthenticated,)
     authentication_classes = (FirebaseAuthentication,)
+    serializer_class = LogoutSerializer
 
     def post(self, request, *args, **kwargs):
         """
-        POST method to log out a user.
+        `POST` method to log out a user.
         """
         uid = request.user.uid
         logout_firebase_user(uid)
@@ -99,7 +100,7 @@ class LogoutAPIView(CreateAPIView):
 # from rest_framework.views import APIView
 # from rest_framework.response import Response
 # from rest_framework import status
-from utilities.firebase import upload_app_file  # Your Firebase upload function
+ # Your Firebase upload function
 
 # class FileUploadView(APIView):
 #     """
@@ -127,6 +128,7 @@ import mimetypes
 import firebase_admin
 from firebase_admin import storage
 from rest_framework.permissions import IsAuthenticated
+from utilities.firebase import upload_app_file 
 
 class FileUploadView(APIView):
     permission_classes = [IsAuthenticated]  # Ensure the user is authenticated
