@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'users',
     'drf_yasg',
     'posts',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -55,7 +56,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
+
+CORS_ORIGIN_ALLOW_ALL = True
 
 ROOT_URLCONF = 'auth.urls'
 
@@ -93,13 +97,20 @@ WSGI_APPLICATION = 'auth.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',  # SQLite is the default engine
+#         'NAME': BASE_DIR / 'db.sqlite3',         # The name and path to the database file
+#     }
+# }
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'postgres',                # Replace with your Supabase DB name
-        'USER': 'postgres.ygvoazhypteaewnlbfqc',                # Replace with your Supabase DB user
+        'USER': 'postgres.qqkytnlnabqmnjnnxjjb',                # Replace with your Supabase DB user
         'PASSWORD': 'offiong102011',        # Replace with your Supabase DB password
-        'HOST': 'aws-0-eu-central-1.pooler.supabase.com',        # Replace with your Supabase DB host
+        'HOST': 'aws-0-us-east-1.pooler.supabase.com',        # Replace with your Supabase DB host
         'PORT': '6543',                         # Default PostgreSQL port
     }
 }
