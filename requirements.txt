@@ -1,5 +1,5 @@
 django
-environs
+environ
 djangorestframework
 firebase-admin
 whitenoise
