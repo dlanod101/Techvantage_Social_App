@@ -4,8 +4,12 @@ from django.conf import settings
 from rest_framework import exceptions
 
 # Initialize Firebase App (this should only be done once in your entire project)
+<<<<<<< HEAD:utilities/firebase.py
 cred = credentials.Certificate(
     {
+=======
+cred = credentials.Certificate({
+>>>>>>> 15f4aa0bd460503a00487e5dc5b3e9e53f9aa9f0:Techvantage/utilities/firebase.py
   "type": "service_account",
   "project_id": "newproject-7ad97",
   "private_key_id": "375616695eee81931c663f2440dd600221ed5e03",
