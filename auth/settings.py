@@ -115,6 +115,17 @@ DATABASES = {
     }
 }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'Techvantage$default',
+#         'USER': 'Techvantage',
+#         'PASSWORD': 'offiong102011',
+#         'HOST': 'Techvantage.mysql.pythonanywhere-services.com',   # Or the IP of the database server
+#         #'PORT': '3306',        # Default MySQL port
+#     }
+# }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
