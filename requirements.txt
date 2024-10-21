@@ -4,6 +4,7 @@ djangorestframework
 firebase-admin
 whitenoise
 drf-yasg
+psycopg2
 psycopg2-binary
 supabase
 django-filter
